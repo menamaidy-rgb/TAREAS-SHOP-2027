@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10152b">
+<title>TAREAS SHOP 2027</title>
+<style>
+:root{--bg:#0b1020;--panel:#151d35;--panel2:#1c2948;--line:#304064;--txt:#f5f7ff;--muted:#aab6d2;--blue:#6c8cff;--cyan:#55d6e8;--gold:#ffd166;--green:#62d6a5;--red:#ff7885}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#1c2d55 0,transparent 38%),var(--bg);color:var(--txt);font:16px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px max(18px,calc((100% - 1050px)/2));border-bottom:1px solid #ffffff18;background:#0b1020d9;position:sticky;top:0;backdrop-filter:blur(12px);z-index:2}
+.logo{font-weight:900;letter-spacing:.5px}.logo span{color:var(--cyan)}.small{color:var(--muted);font-size:13px}
+main{max-width:1050px;margin:0 auto;padding:28px 18px 60px}.screen{display:none}.screen.active{display:block}
+.hero{text-align:center;padding:42px 12px 28px}.pill{display:inline-block;border:1px solid #526a9c;background:#19294a;color:#b9d1ff;border-radius:99px;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(30px,6vw,54px);line-height:1.04;margin:18px auto 12px;max-width:800px}h2{margin:0 0 10px;font-size:24px}p{color:var(--muted);line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:linear-gradient(160deg,#1b2948,#121a30);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 14px 35px #0003}
+.card h3{margin:8px 0}.icon{font-size:28px}.btn{border:0;border-radius:13px;padding:13px 17px;font-weight:800;font-size:15px;cursor:pointer;background:linear-gradient(100deg,var(--blue),#8a75ff);color:white;width:100%;margin-top:10px}
+.btn.secondary{background:#263656;border:1px solid #43577e}.btn.gold{background:linear-gradient(100deg,#e6a93b,#ffd166);color:#241b08}.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row .btn{flex:1;min-width:150px}.field{margin:14px 0}.field label{display:block;font-size:13px;color:#c5d0e8;margin-bottom:7px;font-weight:700}
+input,select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #405477;background:#0e1730;color:white;font:inherit;outline:none}input:focus,select:focus{border-color:var(--cyan)}
+.notice{border:1px solid #7a6534;background:#342b17;color:#ffe3a0;padding:13px 15px;border-radius:13px;font-size:13px;line-height:1.5;margin:16px 0}
+.good{border-color:#286c5a;background:#102e2a;color:#9ef0cf}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.back{background:none;border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:9px 13px;cursor:pointer}
+.stat{font-size:30px;font-weight:900;color:var(--gold)}.question{font-size:20px;font-weight:800;margin:18px 0}
+.answers{display:grid;gap:9px}.answer{background:#202e4e;border:1px solid #3d527c;border-radius:12px;padding:12px;text-align:left;color:white;cursor:pointer}.answer.selected{border-color:var(--cyan);background:#1c4051}
+footer{text-align:center;color:#7583a3;padding:25px;font-size:12px}
+@media(max-width:560px){header{padding:13px 16px}.hero{padding-top:28px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="logo">⭐ TAREAS <span>SHOP 2027</span></div><div class="small">TIENDA OFICIAL</div></header>
+<main>
+<section id="welcome" class="screen active">
+ <div class="hero"><span class="pill">BIENVENIDO</span><h1>BIENVENIDO A LA TIENDA OFICIAL DE TAREAS 2027</h1><p>Tu espacio para acceder a tareas, ayudas y beneficios.</p></div>
+ <div class="grid">
+  <article class="card"><div class="icon">🛍️</div><h3>Continuar como invitado</h3><p>Explora la tienda con acceso limitado.</p><button class="btn" onclick="show('guest')">CONTINUAR COMO INVITADO</button></article>
+  <article class="card"><div class="icon">👤</div><h3>Crear cuenta / perfil</h3><p>Registra tu perfil para acceder a las funciones de usuario.</p><button class="btn secondary" onclick="show('register')">CREAR CUENTA / PERFIL</button></article>
+ </div>
+</section>
+
+<section id="guest" class="screen">
+ <div class="topline"><button class="back" onclick="show('welcome')">← Volver</button><span class="pill">MODO INVITADO</span></div>
+ <div class="hero"><h1>TIENDA DE TAREAS</h1><p>Saldo máximo de invitado: <b>3.000 ⭐</b></p></div>
+ <div class="grid">
+  <article class="card"><div class="icon">📚</div><h3>Comprar tareas</h3><p>AUN NO HAY DISPONIBILIDAD</p><button class="btn" disabled>No disponible</button></article>
+  <article class="card"><div class="icon">💡</div><h3>Comprar ayudas</h3><p>AUN NO DISPONIBLE</p><button class="btn" disabled>No disponible</button></article>
+  <article class="card"><div class="icon">👑</div><h3>Premium Plans</h3><p>Los planes Premium se mostrarán cuando se conecte el sistema de pagos y aprobación.</p><button class="btn gold" disabled>PRÓXIMAMENTE</button></article>
+ </div>
+ <div class="notice">El saldo, los códigos y las compras todavía no están conectados a la base de datos. No se realizan cobros en esta versión inicial.</div>
+</section>
+
+<section id="register" class="screen">
+ <div class="topline"><button class="back" onclick="show('welcome')">← Volver</button><span class="pill">CREAR PERFIL</span></div>
+ <div class="card" style="max-width:560px;margin:20px auto">
+  <h2>Crear cuenta / perfil</h2><p>Completa tus datos para preparar tu registro.</p>
+  <div class="field"><label for="name">NOMBRE (máximo 10 caracteres, sin emojis)</label><input id="name" maxlength="10" autocomplete="name" placeholder="Tu nombre"></div>
+  <div class="field"><label for="phone">NÚMERO DE TELÉFONO (10 dígitos)</label><input id="phone" inputmode="numeric" maxlength="10" placeholder="3001234567"></div>
+  <div class="field"><label for="country">PAÍS</label><select id="country"><option>Colombia</option></select></div>
+  <button class="btn" onclick="prepareRegister()">INICIAR SESIÓN</button>
+  <div id="regmsg" class="notice">Aviso: el registro real por teléfono requiere configurar autenticación y proveedor SMS en Supabase. Este formulario todavía no crea cuentas.</div>
+ </div>
+</section>
+
+<section id="key" class="screen">
+ <div class="topline"><button class="back" onclick="show('welcome')">← Volver</button><span class="pill">KEY ACCESS</span></div>
+ <div class="hero"><h1>OBTENER KEY</h1><p>Los usuarios gratis podrán elegir una de estas dos opciones.</p></div>
+ <div class="grid">
+  <article class="card"><div class="icon">🧠</div><h3>Examen tipo ICFES</h3><p>20 preguntas: 10 fáciles, 5 intermedias y 5 difíciles. Debes acertar todas. Si fallas, repites solamente las incorrectas.</p><button class="btn" onclick="show('exam')">ELEGIR EXAMEN</button></article>
+  <article class="card"><div class="icon">⏳</div><h3>Esperar 60 segundos</h3><p>4 pasos de 15 segundos cada uno para solicitar la KEY sin hacer matemáticas.</p><button class="btn secondary" onclick="show('wait')">ELEGIR ESPERA</button></article>
+  <article class="card"><div class="icon">👑</div><h3>Usuarios VIP</h3><p>Los usuarios VIP reciben KEY instantánea, sin examen ni espera.</p><button class="btn gold" disabled>KEY INSTANTÁNEA VIP</button></article>
+ </div>
+ <div class="notice">La emisión real de KEY requiere validación segura en Supabase. Esta página todavía no genera ni activa claves.</div>
+</section>
+
+<section id="exam" class="screen">
+ <div class="topline"><button class="back" onclick="show('key')">← Volver</button><span class="pill">EXAMEN DE MATEMÁTICAS</span></div>
+ <div class="card" style="max-width:680px;margin:auto"><div class="topline"><b id="level">FÁCIL</b><b id="progress">Pregunta 1 de 20</b></div><div class="question" id="qtext">¿Cuánto es 2 dividido entre 3?</div><div class="answers" id="answers"></div><button class="btn" id="next" onclick="nextQuestion()" disabled>RESPONDER</button><p id="exammsg" class="small">Selecciona una respuesta.</p></div>
+</section>
+
+<section id="wait" class="screen">
+ <div class="topline"><button class="back" onclick="show('key')">← Volver</button><span class="pill">ACCESO POR ESPERA</span></div>
+ <div class="card" style="max-width:560px;margin:20px auto;text-align:center"><h2 id="waittitle">Paso 1 de 4</h2><div class="stat" id="timer">15</div><p>Espera a que termine el contador para continuar al siguiente paso.</p><button class="btn" id="waitbtn" onclick="beginWait()">INICIAR PASO</button><p class="small" id="waitmsg">Tiempo total: 60 segundos.</p></div>
+</section>
+
+<section id="shop" class="screen">
+ <div class="topline"><button class="back" onclick="show('welcome')">← Salir</button><span class="pill">TIENDA</span></div>
+ <div class="hero"><h1>TAREAS SHOP 2027</h1><p>Bienvenido a la tienda.</p></div>
+ <div class="grid">
+  <article class="card"><h3>📚 COMPRAR TAREAS</h3><p>AUN NO HAY DISPONIBILIDAD</p></article>
+  <article class="card"><h3>💡 COMPRAR AYUDAS</h3><p>AUN NO DISPONIBLE</p></article>
+  <article class="card"><h3>👑 PREMIUM PLANS</h3><p>3 días: $2.000 COP<br>10 días: $5.000 COP<br>30 días: $8.000 COP<br>100 días: $20.000 COP</p><p class="small">Activación manual por aprobación de Jorge. Compras deshabilitadas hasta configurar backend.</p></article>
+  <article class="card"><h3>🎟️ CÓDIGOS</h3><p>Canje de códigos deshabilitado hasta conectar la validación segura.</p></article>
+ </div>
+</section>
+</main>
+<footer>TAREAS SHOP 2027 · Versión inicial de interfaz · Conexión segura pendiente</footer>
+<script>
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function prepareRegister(){
+ const n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.trim(),m=document.getElementById('regmsg');
+ if(!n||!/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 ]{1,10}$/.test(n)){m.textContent='Escribe un nombre de máximo 10 caracteres, sin emojis.';return}
+ if(!/^\d{10}$/.test(p)){m.textContent='El teléfono debe tener exactamente 10 dígitos.';return}
+ m.textContent='Datos revisados. Para crear la cuenta falta conectar Supabase Auth y configurar el proveedor de SMS. No se ha creado ninguna cuenta todavía.';
+}
+const questions=[
+ {q:'¿Cuánto es 2 dividido entre 3?',a:['0,666…','1,5','6','0,23'],c:0,l:'FÁCIL'},
+ {q:'¿Cuánto es 8 + 7?',a:['14','15','16','17'],c:1,l:'FÁCIL'},
+ {q:'¿Cuánto es 9 × 4?',a:['32','34','36','38'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 25 − 9?',a:['14','15','16','17'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 5 × 6?',a:['25','30','35','40'],c:1,l:'FÁCIL'},
+ {q:'¿Cuánto es 100 ÷ 10?',a:['1','5','10','20'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 12 + 13?',a:['24','25','26','27'],c:1,l:'FÁCIL'},
+ {q:'¿Cuánto es 7 × 3?',a:['18','20','21','24'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 50 − 18?',a:['30','31','32','33'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 81 ÷ 9?',a:['7','8','9','10'],c:2,l:'FÁCIL'},
+ {q:'¿Cuánto es 3/4 de 80?',a:['40','50','60','70'],c:2,l:'INTERMEDIO'},
+ {q:'Si x + 7 = 19, ¿cuánto vale x?',a:['10','11','12','13'],c:2,l:'INTERMEDIO'},
+ {q:'¿Cuál es el 15% de 200?',a:['15','20','30','35'],c:2,l:'INTERMEDIO'},
+ {q:'¿Cuánto es 2,5 × 4?',a:['8','9','10','12'],c:2,l:'INTERMEDIO'},
+ {q:'Un rectángulo mide 8 por 5. ¿Cuál es su área?',a:['13','26','40','80'],c:2,l:'INTERMEDIO'},
+ {q:'¿Cuánto es (18 ÷ 3) × (7 − 2)?',a:['25','30','35','40'],c:1,l:'DIFÍCIL'},
+ {q:'Resuelve: 3x − 5 = 16.',a:['5','6','7','8'],c:2,l:'DIFÍCIL'},
+ {q:'¿Cuál es la raíz cuadrada de 196?',a:['12','13','14','16'],c:2,l:'DIFÍCIL'},
+ {q:'Un precio de 80 aumenta 25%. ¿Cuál es el nuevo precio?',a:['90','95','100','105'],c:2,l:'DIFÍCIL'},
+ {q:'¿Cuánto es 2/3 + 1/6?',a:['1/2','2/3','5/6','1'],c:2,l:'DIFÍCIL'}
+];
+let qi=0,selected=-1,wrong=[];
+function renderQ(){let q=questions[qi];document.getElementById('level').textContent=q.l;document.getElementById('progress').textContent='Pregunta '+(qi+1)+' de 20';document.getElementById('qtext').textContent=q.q;let box=document.getElementById('answers');box.innerHTML='';selected=-1;q.a.forEach((a,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+') '+a;b.onclick=()=>{selected=i;document.querySelectorAll('.answer').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');document.getElementById('next').disabled=false};box.appendChild(b)});document.getElementById('next').disabled=true;document.getElementById('next').textContent='RESPONDER';}
+function nextQuestion(){if(selected<0)return;if(selected!==questions[qi].c)wrong.push(qi);qi++;if(qi<20){renderQ();return}let msg=document.getElementById('exammsg');if(wrong.length===0){msg.textContent='¡20/20! Examen aprobado. La emisión de KEY se habilitará al conectar el servidor.';document.getElementById('next').disabled=true;document.getElementById('next').textContent='EXAMEN COMPLETADO';return}let missed=[...new Set(wrong)];msg.textContent='Tuviste '+missed.length+' pregunta(s) incorrecta(s). En la versión conectada repetirás solamente esas preguntas.';document.getElementById('next').textContent='REINICIAR DEMO';document.getElementById('next').disabled=false;document.getElementById('next').onclick=()=>{qi=0;wrong=[];document.getElementById('next').onclick=nextQuestion;renderQ();document.getElementById('exammsg').textContent='Demo reiniciada. La repetición selectiva se conectará en la siguiente etapa.'}}
+renderQ();
+let step=1,interval=null;
+function beginWait(){if(interval)return;let left=15;document.getElementById('waitbtn').disabled=true;document.getElementById('waitbtn').textContent='ESPERANDO…';document.getElementById('timer').textContent=left;interval=setInterval(()=>{left--;document.getElementById('timer').textContent=left;if(left<=0){clearInterval(interval);interval=null;document.getElementById('waitbtn').disabled=false;if(step<4){step++;document.getElementById('waittitle').textContent='Paso '+step+' de 4';document.getElementById('waitbtn').textContent='INICIAR PASO';document.getElementById('waitmsg').textContent='Paso anterior completado.'}else{document.getElementById('waitbtn').textContent='60 SEGUNDOS COMPLETADOS';document.getElementById('waitbtn').disabled=true;document.getElementById('waitmsg').textContent='Tiempo completado. La KEY se activará cuando se conecte la validación segura del servidor.'}}},1000)}
+</script>
+</body>
+</html>
